@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#menu {
+    background-color: #05161A; 
+  }
+  
+  .navbar-nav li a {
+    color: #6DA5C0; /* Set default text color for navigation links */
+  }
+  
+  .navbar-toggle .icon-bar {
+    background-color: #6DA5C0; /* Set color for toggle button bars */
+  }
+  
+  .navbar-brand.page-scroll {
+    color: #6DA5C0; /* Set color for the brand text */
+  }
+  
+  .navbar-nav li a:hover {
+    color: #0F969C; /* Set color for navigation links on hover */
+  }
+  
