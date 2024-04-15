@@ -20,7 +20,7 @@ function Login() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'http://localhost:3000/' // Replace with your frontend domain
+            'Access-Control-Allow-Origin': 'http://localhost:3000/'
           }
         }
       );
@@ -44,7 +44,7 @@ function Login() {
     return (
       <div>
         <h2>Welcome, User!</h2>
-        {/* Add your authenticated user content here */}
+        {/**/}
       </div>
     );
   }
