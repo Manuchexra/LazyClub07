@@ -9,7 +9,7 @@ def registration(request):
         data = json.loads(request.body)
         first_name = data.get('first_name')
         last_name = data.get('last_name')
-        user_name = data.get('username')
+        user_name = data.get('user_name')
         password = data.get('password')
         email = data.get('email')
         

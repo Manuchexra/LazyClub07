@@ -19,7 +19,7 @@ function Register() {
     }
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/register',
+        'http://127.0.0.1:8000/registration',
         {
           first_name: first_name,
           last_name: last_name,
