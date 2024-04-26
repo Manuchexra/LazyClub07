@@ -12,9 +12,9 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://lazyclub024.pythonanywhere.com/authentication/',
+        'http://127.0.0.1:8000/login/',
         {
-          username: user_name,
+          user_name: user_name,
           password: password
         },
         {
