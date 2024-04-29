@@ -26,15 +26,9 @@ function Register() {
           user_name: user_name,
           password: password,
           email: email
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'http://localhost:3000/'
-          }
         }
       );
-      console.log(response.data);
+      console.log("dataaaaaaaaaaaaa",response.data);
       if (response.data.status === 'success') {
         // Registration successful
         console.log('Registration successful');
