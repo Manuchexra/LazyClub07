@@ -1,91 +1,57 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Register() {
-  const [first_name, setFirstName] = useState('');
-  const [last_name, setLastName] = useState('');
-  const [user_name, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirm_password, setConfirmPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [registered, setRegistered] = useState(false);
-  const [error, setError] = useState('');
+const RegisterForm = () => {
+    const [formData, setFormData] = useState({
+        fname: '',
+        lname: '',
+        age: '',
+        email: '',
+        password: ''
+    });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (password !== confirm_password) {
-      setError("Passwords don't match");
-      return;
-    }
-    try {
-      const response = await axios.post(
-        'http://127.0.0.1:8000/registration',
-        {
-          first_name: first_name,
-          last_name: last_name,
-          user_name: user_name,
-          password: password,
-          email: email
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('/api/register/', formData); // URL for Django register endpoint
+            alert('Registration successful!');
+        } catch (error) {
+            alert('Registration failed.');
+            console.error(error);
         }
-      );
-      console.log("dataaaaaaaaaaaaa",response.data);
-      if (response.data.status === 'success') {
-        // Registration successful
-        console.log('Registration successful');
-        setRegistered(true);
-        // Optionally, you can redirect the user to the login page or another page
-      } else {
-        // Handle other response types, if any
-        console.log('Unknown response type:', response.data.status);
-      }
-    } catch (error) {
-      console.error('Registration error:', error);
-      setError('Registration failed');
-    }
-  };
+    };
 
-  if (registered) {
     return (
-      <div>
-        <h2>Registration Successful!</h2>
-        {''}
-      </div>
+        <div>
+            <h2>Register Form</h2>
+            <form onSubmit={handleSubmit}>
+                <label>First Name:</label>
+                <input type="text" name="fname" value={formData.fname} onChange={handleChange} required /><br />
+
+                <label>Last Name:</label>
+                <input type="text" name="lname" value={formData.lname} onChange={handleChange} required /><br />
+
+                <label>Age:</label>
+                <input type="number" name="age" value={formData.age} onChange={handleChange} required /><br />
+
+                <label>Email:</label>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required /><br />
+
+                <label>Password:</label>
+                <input type="password" name="password" value={formData.password} onChange={handleChange} required /><br />
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
     );
-  }
+};
 
-  return (
-    <div>
-      <h2>Register</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name:</label>
-          <input type="text" value={first_name} onChange={(e) => setFirstName(e.target.value)} />
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input type="text" value={last_name} onChange={(e) => setLastName(e.target.value)} />
-        </div>
-        <div>
-          <label>Username:</label>
-          <input type="text" value={user_name} onChange={(e) => setUsername(e.target.value)} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </div>
-        <div>
-          <label>Confirm Password:</label>
-          <input type="password" value={confirm_password} onChange={(e) => setConfirmPassword(e.target.value)} />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  );
-}
-
-export default Register;
+export default RegisterForm;
