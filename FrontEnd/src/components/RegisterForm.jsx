@@ -21,7 +21,7 @@ const RegisterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/api/register/', formData); // URL for Django register endpoint
+            await axios.post('/api/register/', formData);
             alert('Registration successful!');
         } catch (error) {
             alert('Registration failed.');

@@ -12,9 +12,9 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/login/',
+        'http://127.0.0.1:8000/api/login/',
         {
-          user_name: user_name,
+          uname: user_name,
           password: password
         },
         {
@@ -26,12 +26,11 @@ function Login() {
       );
       console.log(response.data);
       if (response.data.status === 'auth') {
-        // Authentication successful
+        
         console.log('Authentication successful');
         setAuthenticated(true);
-        // Redirect the user to dashboard or another page
+        
       } else {
-        // Handle other response types, if any
         console.log('Unknown response type:', response.data.status);
       }
     } catch (error) {

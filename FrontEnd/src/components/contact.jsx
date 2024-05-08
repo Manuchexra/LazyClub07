@@ -114,7 +114,7 @@ export const Contact = (props) => {
               </form>
             </div>
             <div className="contact-container">
-            <h2>In Social Medias</h2>
+            <h2>In Social Medias</h2>cd
             <div className="social-links">
               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook-square"></i>
