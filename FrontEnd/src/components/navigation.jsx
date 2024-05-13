@@ -1,9 +1,10 @@
+// Navigation.jsx
 import React from "react";
+import { Link } from 'react-router-dom';
 import Logo from '../css/logo-no-background.png';
 import Dropdown from '../components/dropdown'; // Make sure to import the correct component
 
-export const Navigation = (props) => {
-
+const Navigation = () => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -19,9 +20,9 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button>
-          <a href="#page-top" className="navbar-brand page-scroll">
+          <Link to="/" className="navbar-brand page-scroll">
             <img alt="Logo" src={Logo} />
-          </a>{" "}
+          </Link>{" "}
         </div>
 
         <div
@@ -33,39 +34,52 @@ export const Navigation = (props) => {
               <Dropdown />
             </li>
             <li>
-              <a href="#features" className="page-scroll">
+              <Link to="/features" className="page-scroll">
                 Vazifamiz
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about" className="page-scroll">
+              <Link to="/about" className="page-scroll">
                 Biz Haqimizda
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll">
+              <Link to="/gallery" className="page-scroll">
                 Galereya
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#testimonials" className="page-scroll">
+              <Link to="/testimonials" className="page-scroll">
                 Izohlar
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#team" className="page-scroll">
+              <Link to="/team" className="page-scroll">
                 Jamoa
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#contact" className="page-scroll">
+              <Link to="/contact" className="page-scroll">
                 Kontakt
-              </a>
+              </Link>
+            </li>
+            <li>
+              <button className="btrt1">
+                <Link to="/Register" className="auth1">
+                  Register
+                </Link>
+              </button>
+            </li>
+            <li>
+              <button className="btrt1">
+                <Link to="/Login" className="auth1">
+                  Kirish
+                </Link>
+              </button>
             </li>
           </ul>
         </div>
       </div>
-
     </nav>
   );
 };

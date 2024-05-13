@@ -6,6 +6,17 @@ export const Header = (props) => {
       <div className="intro">
         <div className="overlay">
           <div className="container">
+          <div className="Subscribtion">
+          <div>
+           <div className="container23">
+          <div className="glitch" data-text="ELISABÉTH">ELISABÉTH</div>
+          <div className="glow">ELISABÉTH</div>
+          <p className="subtitle">IMPRACTICAL DEVELOPER</p>
+          </div>
+         <div className="scanlines" />
+         </div>
+         </div>
+   
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
                 <a

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Navigation } from "./components/navigation";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from "./components/navigation";
 import { Header } from "./components/header";
 import { Features } from "./components/features";
 import { About } from "./components/about";
-// import { Services } from "./components/services";
 import { Gallery } from "./components/gallery";
 import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
-import { Contact } from "./components/contact"
+import { Contact } from "./components/contact";
+import LoginForm from "./components/authpages/LoginForm"; // Import default export
+import RegisterForm from "./components/authpages/RegisterForm"; // Import default export
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
-import Register from './components/RegisterForm'
-import Login from './components/LoginForm'
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 500,
@@ -26,19 +26,20 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <Navigation />
-      <Header data={landingPageData.Header} />
-      <Features data={landingPageData.Features} />
-      <About data={landingPageData.About} />
-      <Gallery data={landingPageData.Gallery} />
-      <Testimonials data={landingPageData.Testimonials} />
-      <Team data={landingPageData.Team} />
-      <Contact data={landingPageData.Contact} />
-      <Register />
-      <Login />
-      </div>
-
+        <div>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Header data={landingPageData.Header} />} />
+            <Route path="/features" element={<Features data={landingPageData.Features} />} />
+            <Route path="/about" element={<About data={landingPageData.About} />} />
+            <Route path="/gallery" element={<Gallery data={landingPageData.Gallery} />} />
+            <Route path="/testimonials" element={<Testimonials data={landingPageData.Testimonials} />} />
+            <Route path="/team" element={<Team data={landingPageData.Team} />} />
+            <Route path="/contact" element={<Contact data={landingPageData.Contact} />} />
+            <Route path="/login" element={<LoginForm />} /> {/* Use LoginForm component */}
+            <Route path="/register" element={<RegisterForm />} /> {/* Use RegisterForm component */}
+          </Routes>
+        </div>
   );
 };
 

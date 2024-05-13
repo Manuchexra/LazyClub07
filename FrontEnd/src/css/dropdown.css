@@ -23,7 +23,7 @@
     position: relative;
     display: block;
     z-index: 999;
-    margin-top: 5px;
+    margin-top: 1px;
   }
   
   .dropdown-btn {
