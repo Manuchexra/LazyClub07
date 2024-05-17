@@ -9,9 +9,7 @@ export const Header = (props) => {
           <div className="Subscribtion">
           <div>
            <div className="container23">
-          <div className="glitch" data-text="ELISABÉTH">ELISABÉTH</div>
-          <div className="glow">ELISABÉTH</div>
-          <p className="subtitle">IMPRACTICAL DEVELOPER</p>
+          <div className="glitch" data-text="LazyClub">LazyClub</div>
           </div>
          <div className="scanlines" />
          </div>

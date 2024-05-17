@@ -8,8 +8,8 @@ import { Gallery } from "./components/gallery";
 import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
-import LoginForm from "./components/authpages/LoginForm"; // Import default export
-import RegisterForm from "./components/authpages/RegisterForm"; // Import default export
+import LoginForm from "./components/authpages/LoginForm";
+import RegisterForm from "./components/authpages/RegisterForm";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";

@@ -253,7 +253,6 @@ a:focus,
   position: absolute;
   left: -2px;
   text-shadow: -5px 0 magenta;
-  background: black;
   overflow: hidden;
   top: 0;
   animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
@@ -264,7 +263,6 @@ a:focus,
   position: absolute;
   left: 2px;
   text-shadow: -5px 0 lightgreen;
-  background: black;
   overflow: hidden;
   top: 0;
   animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
@@ -570,6 +568,8 @@ header .intro-text {
 /* Features Section */
 #features {
   background: #072E33;
+  width: 100%;
+  height: 100%;
 }
 #features i.fa {
   font-size: 38px;
@@ -738,6 +738,8 @@ header .intro-text {
 #testimonials {
   padding: 100px 0;
   background: #072E33;
+  width: 100%;
+  height: 100%;
   color: rgb(255, 255, 255);
 }
 #testimonials i {
@@ -802,6 +804,8 @@ header .intro-text {
 #contact {
   padding: 100px 0 60px;
   background: linear-gradient(to right, #294D61 0%, #6DA5C0 100%);
+  width: 100%;
+  height: 100% ;
   color: rgba(255, 255, 255, 0.75);
   transition: 0.4s;
 }
