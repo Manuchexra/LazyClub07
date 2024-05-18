@@ -65,14 +65,14 @@ const Navigation = () => {
             </li>
             <li>
               <button className="btrt1">
-                <Link to="/Register" className="auth1">
+                <Link to={'/Register'} className="auth1">
                   Register
                 </Link>
               </button>
             </li>
             <li>
               <button className="btrt1">
-                <Link to="/Login" className="auth1">
+                <Link to={'/Login'} className="auth1">
                   Kirish
                 </Link>
               </button>

@@ -1,5 +1,4 @@
 import React from "react";
-
 export const Features = (props) => {
   return (
     <div id="features" className="text-center">
@@ -20,6 +19,7 @@ export const Features = (props) => {
             : "Loading..."}
         </div>
       </div>
+
     </div>
   );
 };

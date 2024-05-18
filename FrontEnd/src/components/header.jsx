@@ -1,24 +1,19 @@
 import React from "react";
 import '../css/header.css'
+
 export const Header = (props) => {
   return (
     <header id="header">
       <div className="intro">
         <div className="overlay">
           <div className="container">
-          <div className="Subscribtion">
-          <div>
-           <div className="container23">
-          <div className="glitch" data-text="LazyClub">LazyClub</div>
-          </div>
-         <div className="scanlines" />
-         </div>
-         </div>
    
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
+                <h1 className="text1">Hello!</h1>
+
                 <a
-                  href="#features"
+                  href="/features"
                   className="btn btn-custom btn-lg page-scroll"
                 >
                   Learn More
