@@ -33,5 +33,6 @@ class UserAdmin(BaseUserAdmin):
             "fields": ("email", "first_name", "last_name", "password1", "password2", "is_staff", "is_active"),
         }),
     )
-
+from .models import Register
 admin.site.register(User, UserAdmin)
+admin.site.register(Register)

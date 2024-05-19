@@ -29,3 +29,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}"
+class Register(models.Model):
+    first_name = models.CharField( max_length=100)
+    last_name = models.CharField( max_length=100)
+    email = models.EmailField()
+    age=models.IntegerField(null=True)
+    password=models.CharField(max_length=100)
+    username=models.CharField(max_length=30)
+    def __str__(self) -> str:
+        return self.username
